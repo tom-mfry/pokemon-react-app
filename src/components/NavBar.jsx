@@ -3,28 +3,15 @@ import { VscDebugBreakpointDataUnverified } from "react-icons/vsc";
 
 const NavBar = () => {
   return (
-    <div className="fixed top-0 left-0 h-12 w-screen flex flex-row items-center justify-evenly bg-secondary-color shadow-lg border-b-2 border-black">
-      <NavBarHeading
-        icon={<VscDebugBreakpointDataUnverified size="20" />}
-        tooltip={"What's hot ?"}
-        text={"Home"}
-      />
-      <NavBarHeading
-        icon={<VscDebugBreakpointDataUnverified size="20" />}
-        tooltip={"Add new server"}
-        text={"Search"}
-      />
-      <NavBarHeading
-        icon={<VscDebugBreakpointDataUnverified size="20" />}
-        tooltip={"Trending"}
-        text={"About"}
-      />
-      <NavBarHeading
-        icon={<VscDebugBreakpointDataUnverified size="20" />}
-        tooltip={"Settings"}
-        text={"Contact"}
-      />
-    </div>
+    <>
+      <div className="fixed top-0 left-0 h-12 w-screen flex flex-row items-center justify-evenly bg-secondary-color shadow-lg border-b-2 border-black">
+        <NavBarHeading text={"Home"} />
+        <NavBarHeading text={"Search"} />
+        <NavBarHeading text={"About"} />
+        <NavBarHeading text={"Contact"} />
+      </div>
+      <div className="h-12 w-screen"></div>
+    </>
   );
 };
 

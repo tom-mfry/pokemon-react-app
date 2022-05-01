@@ -1,27 +1,37 @@
 import React from "react";
-import { useState } from "react";
 
-const Card = ({ card, handleChoice, flipped, disabled }) => {
-  const [show, setShow] = useState(false);
-
-  const handleClick = () => {
-    if (!disabled) {
-      handleChoice(card);
-    }
-  };
-
+const Card = ({ pokemon, loading, infoPokemon, colors }) => {
+  console.log(pokemon);
   return (
-    <div className="card">
-      <div className={flipped ? "flipped" : ""}>
-        <img src={card.src} alt="card front" className="front" />
-        <img
-          src="/img/cover.png"
-          alt="card back"
-          className="back"
-          onClick={handleClick}
-        />
-      </div>
-    </div>
+    <>
+      {loading ? (
+        <h1>Loading ...</h1>
+      ) : (
+        pokemon.map((pokemon) => {
+          return (
+            <div
+              className="card h-[250px] w-[200px] bg-[#dfdfdf] rounded-3xl p-[20px] m-[10px] flex flex-col items-center justify-between"
+              key={pokemon.id}
+              onClick={() => infoPokemon(pokemon)}
+            >
+              <img
+                className="w-[80%]"
+                src={pokemon.sprites.front_default}
+                alt=""
+              />
+              <div className="bg-white px-2 py-1 rounded-xl">{`#${pokemon.id
+                .toString()
+                .padStart(3, "0")}`}</div>
+
+              {/* pokemon number - sentence case */}
+              <h2>{`${String(pokemon.name).at(0).toUpperCase()}${String(
+                pokemon.name
+              ).slice(1)}`}</h2>
+            </div>
+          );
+        })
+      )}
+    </>
   );
 };
 
