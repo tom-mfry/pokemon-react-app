@@ -28,17 +28,13 @@ const NavBar = () => {
   );
 };
 
-const NavBarHeading = ({ icon, text, tooltip = "Tooltip 💡" }) => {
+const NavBarHeading = ({ text }) => {
   return (
     <div className="sidebar-icon group skew-x-[-15deg]">
       <div className="skew-x-[15deg] flex items-center tracking-wide justify-">
-        {icon}
+        <VscDebugBreakpointDataUnverified size="20" />
         {text}
       </div>
-
-      <span class="sidebar-tooltip group-hover:scale-100 skew-x-[15deg]">
-        {tooltip}
-      </span>
     </div>
   );
 };

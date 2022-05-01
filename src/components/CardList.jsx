@@ -1,7 +1,7 @@
 import React from "react";
 
 const CardList = () => {
-  return <div className="bg-blue-400 text-black">CardList</div>;
+  return <div className="w-full h-screen bg-primary-color">Card List</div>;
 };
 
 export default CardList;
