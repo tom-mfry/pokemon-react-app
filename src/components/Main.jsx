@@ -6,12 +6,17 @@ import SearchBar from "./SearchBar";
 import { useState } from "react";
 
 const Main = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
       <NavBar />
+      <div className="parent">{`--> ${searchTerm} <--`}</div>
       <CompareCards />
-      <SearchBar />
-      <CardList />
+      {/* <SearchBar onChange={(userInput) => setSearchTerm(userInput)} /> */}
+      <CardList
+        userSearch={searchTerm}
+        onChange={(userInput) => setSearchTerm(userInput)}
+      />
     </>
   );
 };

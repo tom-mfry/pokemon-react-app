@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import { AiOutlineClose } from "react-icons/ai";
 
-const CardList = () => {
+const CardList = (props) => {
   const [pokeData, setPokeData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
   const [nextUrl, setNextUrl] = useState();
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
+  const [testInput, setTestInput] = useState("");
   // type colors
 
   // retrieve pokemon data
@@ -37,14 +39,38 @@ const CardList = () => {
     // console.log(`useEffect Called`);
   }, [url]);
 
+  const resetInputField = () => {
+    console.log("Reset Input");
+    // setSearchTerm("");
+  };
+
   return (
     <>
+      <div
+        name="search-box"
+        className="flex items-center justify-center w-full text-gray-600 my-2"
+      >
+        <input
+          name="search-input"
+          className="h-full border-none py-[5px] px-[20px] text-xl text-center my-1 outline-none focus:placeholder:text-transparent"
+          type="text"
+          placeholder="Search Pokemon ..."
+          onChange={(e) => {
+            props.onChange(e.target.value);
+            setTestInput(e.target.value);
+          }}
+        />
+        <i name="search-clear" className="hidden" onClick={resetInputField}>
+          <AiOutlineClose size={20} />
+        </i>
+      </div>
       <div className="flex  flex-col justify-center items-center bg-[#FFFDF1]">
         <div className="w-full h-full bg-[#d1cfc3] flex flex-wrap items-center justify-center max-w-[1200px] py-10 px-4 border-2 border-black outline-none">
           {/* create visual array of pokemon */}
           <Card
             pokemon={pokeData}
             loading={loading}
+            userSearch={testInput}
             infoPokemon={(pokemon) => setPokeDex(pokemon)}
           />
         </div>
