@@ -54,39 +54,41 @@ const CardList = () => {
 
   return (
     <>
-      <div className="w-full h-full bg-primary-color flex flex-wrap items-center justify-center bg-[#FFFDF1] max-w-[1200px] py-2 px-4 border-solid border-transparent border-2 border-t-black outline-none">
-        {/* create visual array of pokemon */}
-        <Card
-          pokemon={pokeData}
-          loading={loading}
-          infoPokemon={(pokemon) => setPokeDex(pokemon)}
-          colors={colors}
-        />
-      </div>
-      {/* pagination */}
-      <div className="flex items-center justify-evenly bg-[#FFFDF1] pb-5">
-        {prevUrl && (
-          <button
-            className="bg-red-500 max-w-[1200px] py-1 px-4 outline-none rounded-md"
-            onClick={() => {
-              setPokeData([]);
-              setUrl(prevUrl);
-            }}
-          >
-            Previous
-          </button>
-        )}
-        {nextUrl && (
-          <button
-            className="bg-red-500 items-center justify-center max-w-[1200px] py-1 px-4 outline-none rounded-md"
-            onClick={() => {
-              setPokeData([]);
-              setUrl(nextUrl);
-            }}
-          >
-            Next
-          </button>
-        )}
+      <div className="flex justify-center bg-[#FFFDF1] border-t-2 border-black">
+        <div className="w-full h-full bg-primary-color flex flex-wrap items-center justify-center max-w-[1200px] py-2 px-4 border-solid border-transparent outline-none">
+          {/* create visual array of pokemon */}
+          <Card
+            pokemon={pokeData}
+            loading={loading}
+            infoPokemon={(pokemon) => setPokeDex(pokemon)}
+            colors={colors}
+          />
+        </div>
+        {/* pagination */}
+        <div className="flex items-center justify-evenly bg-[#FFFDF1] pb-5">
+          {prevUrl && (
+            <button
+              className="bg-red-500 max-w-[1200px] py-1 px-4 outline-none rounded-md"
+              onClick={() => {
+                setPokeData([]);
+                setUrl(prevUrl);
+              }}
+            >
+              Previous
+            </button>
+          )}
+          {nextUrl && (
+            <button
+              className="bg-red-500 items-center justify-center max-w-[1200px] py-1 px-4 outline-none rounded-md"
+              onClick={() => {
+                setPokeData([]);
+                setUrl(nextUrl);
+              }}
+            >
+              Next
+            </button>
+          )}
+        </div>
       </div>
     </>
   );

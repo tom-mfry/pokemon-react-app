@@ -4,7 +4,7 @@ import { VscDebugBreakpointDataUnverified } from "react-icons/vsc";
 const NavBar = () => {
   return (
     <>
-      <div className="fixed top-0 left-0 h-12 w-screen flex flex-row items-center justify-evenly bg-secondary-color shadow-lg border-b-2 border-black">
+      <div className="fixed top-0 left-0 h-12 w-screen flex flex-row items-center justify-evenly bg-secondary-color shadow-lg border-b-2 border-black z-10">
         <NavBarHeading text={"Home"} />
         <NavBarHeading text={"Search"} />
         <NavBarHeading text={"About"} />
