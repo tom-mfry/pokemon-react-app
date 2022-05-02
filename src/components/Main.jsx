@@ -10,7 +10,6 @@ const Main = () => {
   return (
     <>
       <NavBar />
-      <div className="parent">{`--> ${searchTerm} <--`}</div>
       <CompareCards />
       {/* <SearchBar onChange={(userInput) => setSearchTerm(userInput)} /> */}
       <CardList

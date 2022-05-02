@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
 const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
@@ -27,6 +27,15 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
     normal: "#F5F5F5",
   };
   const main_types = Object.keys(colors);
+
+  const handleClick = (event) => {
+    console.log("parent clicked");
+  };
+
+  const handlefavourites = (e) => {
+    console.log(e.target.classList.toggle("opacity-0"));
+    // e.target.classList.toggle("opacity-0");
+  };
 
   return (
     <>
@@ -59,15 +68,27 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
                   key={pokemon.id}
                   style={{ backgroundColor: `${color}` }}
                 >
+                  {/* stats */}
+                  <div className="absolute left-3 top-2 opacity-80 cursor-pointer">
+                    STATS
+                  </div>
+
                   {/* favourite toggle */}
-                  <div className="absolute left-3 top-2 opacity-80">STATS</div>
-                  <div className="absolute right-3 top-2 text-black">
-                    <i name="favourite-outline" className="absolute">
-                      <BsStar size={24} />
-                    </i>
-                    <i name="favourite" className="text-yellow-400">
-                      <BsStarFill size={24} />
-                    </i>
+                  <div className="absolute right-3 top-2 text-black w-[25px] h-[25px]">
+                    <div
+                      name="favourite-outline"
+                      className="absolute w-[25px] h-[25px]"
+                      style={{ pointerEvents: "none" }}
+                    >
+                      <BsStar style={{ pointerEvents: "none" }} size={24} />
+                    </div>
+                    <div
+                      id="favourite"
+                      className="text-yellow-400 opacity-0 z-10 w-[25px] h-[25px]"
+                      onClick={handlefavourites}
+                    >
+                      <BsStarFill style={{ pointerEvents: "none" }} size={24} />
+                    </div>
                   </div>
                   {/* sprite */}
                   <div className="w-[70%] bg-white bg-opacity-50 rounded-full mb-2">
