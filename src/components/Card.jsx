@@ -74,7 +74,7 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
                   .toString()
                   .padStart(3, "0")}`}</div>
                 {/* pokemon name */}
-                <h2>
+                <h2 className="font-bold">
                   {`${String(pokemon.name).at(0).toUpperCase()}${String(
                     pokemon.name
                   ).slice(1)}`}

@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 const SearchBar = () => {
-  const [inputValue, setInputValue] = useState("");
-  // Input Field handler
-  const handleUserInput = (e) => {
-    setInputValue(e.target.value);
-  };
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Reset Input Field handler
   const resetInputField = () => {
-    setInputValue("");
+    setSearchTerm("");
   };
 
   return (
@@ -24,8 +20,10 @@ const SearchBar = () => {
           className="h-full border-none py-[5px] px-[20px] text-xl text-center my-1 outline-none focus:placeholder:text-transparent"
           type="text"
           placeholder="Search Pokemon ..."
-          value={inputValue}
-          onChange={handleUserInput}
+          onChange={async (e) => {
+            await setSearchTerm(e.target.value);
+            console.log(searchTerm);
+          }}
         />
         <i name="search-clear" className="" onClick={resetInputField}>
           <AiOutlineClose size={20} />
