@@ -54,7 +54,7 @@ const CardList = () => {
 
   return (
     <>
-      <div className="flex justify-center bg-[#FFFDF1] border-t-2 border-black">
+      <div className="flex  flex-col justify-center items-center bg-[#FFFDF1] border-t-2 border-black">
         <div className="w-full h-full bg-primary-color flex flex-wrap items-center justify-center max-w-[1200px] py-2 px-4 border-solid border-transparent outline-none">
           {/* create visual array of pokemon */}
           <Card
@@ -64,11 +64,12 @@ const CardList = () => {
             colors={colors}
           />
         </div>
+
         {/* pagination */}
-        <div className="flex items-center justify-evenly bg-[#FFFDF1] pb-5">
+        <div className="flex items-center justify-evenly bg-[#FFFDF1] mb-5 mt-5">
           {prevUrl && (
             <button
-              className="bg-red-500 max-w-[1200px] py-1 px-4 outline-none rounded-md"
+              className="bg-red-500 max-w-[1200px] py-1 px-4 mx-5 outline-none rounded-md"
               onClick={() => {
                 setPokeData([]);
                 setUrl(prevUrl);
@@ -79,7 +80,7 @@ const CardList = () => {
           )}
           {nextUrl && (
             <button
-              className="bg-red-500 items-center justify-center max-w-[1200px] py-1 px-4 outline-none rounded-md"
+              className="bg-red-500 items-center justify-center max-w-[1200px] py-1 px-4 outline-none rounded-md mx-5"
               onClick={() => {
                 setPokeData([]);
                 setUrl(nextUrl);
