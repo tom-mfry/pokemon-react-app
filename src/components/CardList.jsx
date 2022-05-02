@@ -10,22 +10,7 @@ const CardList = () => {
   const [prevUrl, setPrevUrl] = useState();
   const [pokeDex, setPokeDex] = useState();
   // type colors
-  const colors = {
-    fire: "#FDDFDF",
-    grass: "#DEFDEO",
-    electric: "#FCF7DE",
-    water: "#DEF3FD",
-    ground: "#f4e7da",
-    rock: "#d5d5d4",
-    fairy: "#fceaff",
-    poison: "# 98d7a5",
-    bug: "#f8d5a3",
-    dragon: "# 97b3e6",
-    psychic: "#eaedal",
-    flying: "#F5F5F5",
-    fighting: "#E6E0D4",
-    normal: "#F5F5F5",
-  };
+
   // retrieve pokemon data
   const getPokeDex = async () => {
     setLoading(true);
@@ -54,14 +39,13 @@ const CardList = () => {
 
   return (
     <>
-      <div className="flex  flex-col justify-center items-center bg-[#FFFDF1] border-t-2 border-black">
-        <div className="w-full h-full bg-primary-color flex flex-wrap items-center justify-center max-w-[1200px] py-2 px-4 border-solid border-transparent outline-none">
+      <div className="flex  flex-col justify-center items-center bg-[#FFFDF1]">
+        <div className="w-full h-full bg-[#d1cfc3] flex flex-wrap items-center justify-center max-w-[1200px] py-10 px-4 border-2 border-black outline-none">
           {/* create visual array of pokemon */}
           <Card
             pokemon={pokeData}
             loading={loading}
             infoPokemon={(pokemon) => setPokeDex(pokemon)}
-            colors={colors}
           />
         </div>
 
