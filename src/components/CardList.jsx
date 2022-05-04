@@ -79,7 +79,7 @@ const CardList = (props) => {
         <div className="flex items-center justify-evenly bg-[#FFFDF1] mb-5 mt-5">
           {prevUrl && (
             <button
-              className="bg-red-500 max-w-[1200px] py-1 px-4 mx-5 outline-none rounded-md"
+              className="nav-main items-center justify-center max-w-[1200px] min-w-[30px] py-1 px-4 outline-none mx-5"
               onClick={() => {
                 setPokeData([]);
                 setUrl(prevUrl);
@@ -90,7 +90,7 @@ const CardList = (props) => {
           )}
           {nextUrl && (
             <button
-              className="bg-red-500 items-center justify-center max-w-[1200px] py-1 px-4 outline-none rounded-md mx-5"
+              className="nav-main items-center justify-center max-w-[1200px] min-w-[30px] py-1 px-4 outline-none mx-5"
               onClick={() => {
                 setPokeData([]);
                 setUrl(nextUrl);

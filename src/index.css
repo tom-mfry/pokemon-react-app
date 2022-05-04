@@ -19,19 +19,17 @@
 
   @layer components {
 
-    .sidebar-icon {
+    .nav-main {
         @apply relative flex items-center justify-center 
-        h-8 w-32 mt-2 mb-2
+        h-8 mt-2 mb-2
         hover:bg-primary-color bg-tertiary-color
         text-primary-color hover:text-tertiary-color
-        hover:rounded-xl rounded-md
-        transition-all duration-200 ease-linear
-        cursor-pointer shadow-lg;
+        rounded-sm transition-all duration-200 ease-linear
+         shadow-lg skew-x-[-15deg];
     }
-    .sidebar-tooltip {
-        @apply absolute w-auto p-2 m-2 min-w-max top-14 rounded-md
-        text-white bg-tertiary-color 
-        text-xs font-bold 
-        transition-all duration-100 origin-left scale-0;
+
+    .flipped {
+      @apply hidden
+    
     }
 }

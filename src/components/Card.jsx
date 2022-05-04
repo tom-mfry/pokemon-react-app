@@ -28,13 +28,8 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
   };
   const main_types = Object.keys(colors);
 
-  const handleClick = (event) => {
-    console.log("parent clicked");
-  };
-
   const handlefavourites = (e) => {
-    console.log(e.target.classList.toggle("opacity-0"));
-    // e.target.classList.toggle("opacity-0");
+    e.target.classList.toggle("opacity-0");
   };
 
   return (
@@ -69,7 +64,12 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
                   style={{ backgroundColor: `${color}` }}
                 >
                   {/* stats */}
-                  <div className="absolute left-3 top-2 opacity-80 cursor-pointer">
+                  <div
+                    className="absolute left-3 top-2 opacity-80 cursor-pointer"
+                    onClick={() => {
+                      console.log("clicked");
+                    }}
+                  >
                     STATS
                   </div>
 
@@ -77,14 +77,14 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
                   <div className="absolute right-3 top-2 text-black w-[25px] h-[25px]">
                     <div
                       name="favourite-outline"
-                      className="absolute w-[25px] h-[25px]"
+                      className="absolute w-[25px] h-[25px] z-10"
                       style={{ pointerEvents: "none" }}
                     >
                       <BsStar style={{ pointerEvents: "none" }} size={24} />
                     </div>
                     <div
                       id="favourite"
-                      className="text-yellow-400 opacity-0 z-10 w-[25px] h-[25px]"
+                      className="absolute text-yellow-400 opacity-0 z-0 w-[25px] h-[25px] cursor-pointer"
                       onClick={handlefavourites}
                     >
                       <BsStarFill style={{ pointerEvents: "none" }} size={24} />
