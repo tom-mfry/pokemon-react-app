@@ -6,6 +6,7 @@
     --primary-color: #f2f2f2;
     --secondary-color: #616161;
     --tertiary-color: #313131;
+    background-color: #FFFDF1;
   }
 
 * {
@@ -28,8 +29,15 @@
          shadow-lg skew-x-[-15deg];
     }
 
+    .sidebar-tooltip {
+      @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md
+      text-white bg-tertiary-color 
+      text-xs font-bold 
+      transition-all duration-100 origin-left scale-0;
+  }
+
     .flipped {
-      @apply hidden
+      @apply transform
     
     }
-}
+  }

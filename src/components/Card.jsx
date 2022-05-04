@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
 const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
@@ -39,7 +39,7 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
       ) : (
         pokemon
           .filter((val) => {
-            if (userSearch == "") {
+            if (userSearch === "") {
               return val;
             } else if (val.name.includes(userSearch.toLowerCase())) {
               return val;
@@ -59,18 +59,17 @@ const Card = ({ pokemon, loading, infoPokemon, userSearch }) => {
             return (
               <>
                 <div
-                  className={`card-front relative card h-[250px] w-[200px] rounded-3xl p-[20px] m-[10px] flex flex-col items-center justify-between border-2 border-gray-500`}
+                  id="card-front"
+                  className={`relative card h-[250px] w-[200px] rounded-3xl p-[20px] m-[10px] flex flex-col items-center justify-between border-2 border-gray-500`}
                   key={pokemon.id}
                   style={{ backgroundColor: `${color}` }}
                 >
                   {/* stats */}
-                  <div
-                    className="absolute left-3 top-2 opacity-80 cursor-pointer"
-                    onClick={() => {
-                      console.log("clicked");
-                    }}
-                  >
+                  <div className="group absolute left-3 top-2 cursor-pointer">
                     STATS
+                    <span class="absolute left-0 bottom-7 sidebar-tooltip group-hover:scale-100">
+                      {"UNDER DEVELOPMENT"}
+                    </span>
                   </div>
 
                   {/* favourite toggle */}

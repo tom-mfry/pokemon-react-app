@@ -52,7 +52,7 @@ const CardList = (props) => {
       >
         <input
           name="search-input"
-          className="h-full border-none py-[5px] px-[20px] text-xl text-center my-1 outline-none focus:placeholder:text-transparent"
+          className="h-full border-none py-[5px] px-[20px] text-xl text-center my-1 outline-none focus:placeholder:text-transparent bg-[#FFFDF1] w-[40%]"
           type="text"
           placeholder="Search Pokemon ..."
           onChange={(e) => {
@@ -90,7 +90,7 @@ const CardList = (props) => {
           )}
           {nextUrl && (
             <button
-              className="nav-main items-center justify-center max-w-[1200px] min-w-[30px] py-1 px-4 outline-none mx-5"
+              className="nav-main items-center justify-center max-w-[1200px] min-w-[30px] py-1 px-4 outline-none mx-5 hover:border-2 hover:border-black"
               onClick={() => {
                 setPokeData([]);
                 setUrl(nextUrl);
